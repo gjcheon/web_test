@@ -20,8 +20,8 @@
         var vx = 0.0; // Velocity x and y
         var vy = 0.0;
         var updateRate = 1/60; // Sensor refresh rate
-        document.writeln('word word word');
         function getAccel(){
+            document.getElementById("result").innerText = "hello world";
             DeviceMotionEvent.requestPermission().then(response => {
                 if (response == 'granted') {
             // Add a listener to get smartphone orientation 
@@ -63,5 +63,6 @@
     <body style="background-color:lightblue;">
         <button id="accelPermsButton"  style="height:50px;" onclick="getAccel()"><h1>Get Accelerometer Permissions</h1></button>
         <div class="indicatorDot" style="left:30%; top:30%;"></div>
+        <div id="result"  style="height:100px;"></div>
     </body>
 </html>
